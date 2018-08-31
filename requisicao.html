@@ -7,20 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Requisição</title>
     <script src="jquery.js"></script>
-    <scrip>
-        $(function)){ })
-    </scrip>
+    <script>
+        $(function(){
+
+            $.ajax({
+                url:'texto.txt',
+                success:function(response){
+                    //console.log(response);
+                    //alert('encontrou!!!);
+                    //Inserindo o conteúdo do rewsponse após a tag<h1>
+                    console.log(response);
+                    alert('encontrou!!!!');
+                    $('h1').after('<h2>'+response+'</h2>');
+                },
+                error:function(){
+                    alert('Ocorreu um erro!!!');
+                }
+            });
+        })
+    </script>
 </head>
 
 <body>
     <h1>Ajax - Asynchronous JavaScript and XML</h1>
     <p>
-        Técnicade desenvolvimento web que permite a criação de aplicações mais intereativas. Tornar páginas web mais rápidas pela
-        trocade pequenas quantidades de informação.
+        Técnica de desenvolvimento web que permite a criação de aplicações mais interativas. Tornar páginas web mais rápidas pela
+        troca de pequenas quantidades de informação.
     </p>
 
     <p>
-        Evita que uma página inteira seja recuperada cada vez que alguma nova informação precisa ser colutada no servidor.
+        Evita que uma página inteira seja recuperada cada vez que alguma nova informação precisa ser coletada no servidor.
     </p>
 
 </body>
